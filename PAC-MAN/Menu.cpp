@@ -30,16 +30,16 @@ void Menu::restartGame()
 
 void Menu::StartMenu(sf::RenderWindow *window)
 {
-	sf::Text text1("Добро пожаловать в клон Pac-Man", font, 30);
+	sf::Text text1("Г„Г®ГЎГ°Г® ГЇГ®Г¦Г Г«Г®ГўГ ГІГј Гў ГЄГ«Г®Г­ Pac-Man", font, 30);
 	text1.setPosition(sf::Vector2f(10, 150));
 	window->draw(text1);
-	Button StartGameButton(200, 20, sf::Vector2f(120, 205), "Начало игры");
+	Button StartGameButton(200, 20, sf::Vector2f(120, 205), "ГЌГ Г·Г Г«Г® ГЁГЈГ°Г»");
 	sf::Text text2(StartGameButton.returnText(), font, 20);
 	text2.setPosition(sf::Vector2f(160, 200));
 	text2.setFillColor(sf::Color::Black);
 	window->draw(StartGameButton.ShapeButton());
 	
-	Button EndGameButton(200, 20, sf::Vector2f(120, 255), "Выход");
+	Button EndGameButton(200, 20, sf::Vector2f(120, 255), "Г‚Г»ГµГ®Г¤");
 	sf::Text text3(EndGameButton.returnText(), font, 20);
 	text3.setPosition(sf::Vector2f(190, 250));
 	text3.setFillColor(sf::Color::Black);
@@ -74,20 +74,16 @@ void Menu::StartGame(sf::RenderWindow *window)
 	Red4->Update(window, PacMan::ReturnShape().getPosition().x, PacMan::ReturnShape().getPosition().y, &LivePacMan);
 	window->draw(TextScore);
 	window->draw(PacMan::ReturnShape());
-	window->draw(Red1->returnSpriteGhost());
-	window->draw(Red2->returnSpriteGhost());
-	window->draw(Red3->returnSpriteGhost());
-	window->draw(Red4->returnSpriteGhost());
 	if (PacMan::Score() == 186) StatGame = Win;
 	if (!LivePacMan) StatGame = Death;
 }
 
 void Menu::DeathGame(sf::RenderWindow *window)
 {
-	sf::Text text1("Печально, но вы УМЕРЛИ", font, 30);
+	sf::Text text1("ГЏГҐГ·Г Г«ГјГ­Г®, Г­Г® ГўГ» Г“ГЊГ…ГђГ‹Г€", font, 30);
 	text1.setPosition(sf::Vector2f(100, 150));
 	window->draw(text1);
-	Button StartMenuButton(200, 20, sf::Vector2f(120, 235), "В главное меню");
+	Button StartMenuButton(200, 20, sf::Vector2f(120, 235), "Г‚ ГЈГ«Г ГўГ­Г®ГҐ Г¬ГҐГ­Гѕ");
 	sf::Text text2(StartMenuButton.returnText(), font, 20);
 	text2.setPosition(sf::Vector2f(160, 230));
 	text2.setFillColor(sf::Color::Black);
@@ -104,10 +100,10 @@ void Menu::DeathGame(sf::RenderWindow *window)
 
 void Menu::WinGame(sf::RenderWindow *window)
 {
-	sf::Text text1("Поздравляю, ВЫ ПОБЕДИЛИ!!!", font, 30);
+	sf::Text text1("ГЏГ®Г§Г¤Г°Г ГўГ«ГїГѕ, Г‚Г› ГЏГЋГЃГ…Г„Г€Г‹Г€!!!", font, 30);
 	text1.setPosition(sf::Vector2f(10, 150));
 	window->draw(text1);
-	Button StartMenuButton(200, 20, sf::Vector2f(120, 235), "В главное меню");
+	Button StartMenuButton(200, 20, sf::Vector2f(120, 235), "Г‚ ГЈГ«Г ГўГ­Г®ГҐ Г¬ГҐГ­Гѕ");
 	sf::Text text2(StartMenuButton.returnText(), font, 20);
 	text2.setPosition(sf::Vector2f(160, 230));
 	text2.setFillColor(sf::Color::Black);
