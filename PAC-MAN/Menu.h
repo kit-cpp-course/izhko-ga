@@ -7,12 +7,11 @@ class Menu : public PacMan, public MapPacMan
 	int StatGame = Start;
 	sf::Font font;
 	bool Exit = false;
-	sf::Text TextScore = sf::Text("Score: ", font, 20); 
-	
+	sf::Text TextScore = sf::Text("Score: ", font, 20);  
 	Ghost *Red1 = new Ghost(0.7f, sf::Color::Red, 9, sf::Vector2f(440, 440));
 	Ghost *Red2 = new Ghost(0.7f, sf::Color::Red, 9, sf::Vector2f(40, 40));
 	Ghost *Red3 = new Ghost(0.7f, sf::Color::Red, 9, sf::Vector2f(440, 40));
-	Ghost *Red4 = new Ghost(0.7f, sf::Color::Red, 9, sf::Vector2f(40, 440)); 
+	Ghost *Red4 = new Ghost(0.7f, sf::Color::Red, 9, sf::Vector2f(40, 440));
 public:
 	Menu();
 	~Menu();

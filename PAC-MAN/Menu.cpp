@@ -63,21 +63,18 @@ void Menu::StartMenu(sf::RenderWindow *window)
 
 void Menu::StartGame(sf::RenderWindow *window)
 {
-	std::ostringstream Score;
-	Score << PacMan::Score();
-	TextScore.setString("Score: " + Score.str() + "/186");
+	
 	PacMan::Update(MapPacMan::returnValue());
 	MapPacMan::Update(window);
 	Red1->Update(window, PacMan::ReturnShape().getPosition().x, PacMan::ReturnShape().getPosition().y, &LivePacMan);
 	Red2->Update(window, PacMan::ReturnShape().getPosition().x, PacMan::ReturnShape().getPosition().y, &LivePacMan);
 	Red3->Update(window, PacMan::ReturnShape().getPosition().x, PacMan::ReturnShape().getPosition().y, &LivePacMan);
 	Red4->Update(window, PacMan::ReturnShape().getPosition().x, PacMan::ReturnShape().getPosition().y, &LivePacMan);
+	std::ostringstream Score;
+	Score << PacMan::Score();
+	TextScore.setString("Score: " + Score.str() + "/186");
 	window->draw(TextScore);
-	window->draw(PacMan::ReturnShape());
-	window->draw(Red1->returnSpriteGhost());
-	window->draw(Red2->returnSpriteGhost());
-	window->draw(Red3->returnSpriteGhost());
-	window->draw(Red4->returnSpriteGhost());
+	window->draw(PacMan::ReturnShape()); 
 	if (PacMan::Score() == 186) StatGame = Win;
 	if (!LivePacMan) StatGame = Death;
 }

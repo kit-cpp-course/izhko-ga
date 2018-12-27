@@ -20,10 +20,11 @@ public:
 	void ChangeDir(float x, float y) { Direction = sf::Vector2f(x, y); };
 	void moveShape(sf::Vector2f _Direction) { Shape.move(_Direction*Speed); };
 	void RestartAlive() { Shape.setPosition(StartPosition); };
+	virtual void Update(sf::RenderWindow *window, float PacX, float PacY, bool *live) {};
+	virtual void Update(char ** strMap) {};
 	float ExactPositionX() { return Shape.getPosition().x; };
 	float ExactPositionY() { return Shape.getPosition().y; };
 	float ReturnRadius() { return Radius; };
-	float ReturnSpeed() { return Speed; };
-	
+	float ReturnSpeed() { return Speed; }; 
 	sf::Vector2f ReturnStartPosition() { return StartPosition; };
 };

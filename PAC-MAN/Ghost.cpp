@@ -28,8 +28,7 @@ void Ghost::Update(sf::RenderWindow *window, float PacX, float PacY, bool *live)
 		}
 	}
 	if (turn)
-	{
-		std::cout << "1";
+	{	
 		TempVec = ReturnDirection();
 		if (ReturnDirection().x == 0)
 		{

@@ -3,7 +3,7 @@
 
 MapPacMan::MapPacMan() : Food(sf::CircleShape(2.f))
 {
-	Food.setFillColor(sf::Color::Red);
+	Food.setFillColor(sf::Color::White);
 	sf::Image map_Image;
 	map_Image.loadFromFile("1234.png");
 	sf::Texture map_texture;
@@ -32,7 +32,7 @@ char ** MapPacMan::returnValue() { return Map; }
 
 void MapPacMan::Update(sf::RenderWindow *window)
 {
-	Food.setFillColor(sf::Color::Red);
+	//Food.setFillColor(sf::Color::Red);
 	sf::Image map_Image;
 	map_Image.loadFromFile("1234.png");
 	sf::Texture map_texture;
