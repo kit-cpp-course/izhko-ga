@@ -1,9 +1,0 @@
-#pragma once
-#include <SFML/Graphics.hpp>
-#include "Pac-Man.h"
-#include "MapPacMan.h"
-#include "Ghost.h"  
-#include "Menu.h"
-#include "Button.h"
-#include "Alive.h"
-#include <iostream>  
